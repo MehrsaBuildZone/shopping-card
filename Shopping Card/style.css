@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 100vw;
+    margin: auto;
+    transition: 0.5s;
+}
+.container logo{
+    color: rgb(242, 240, 243);
+    margin-left: 20rem;
+}
+
+header{
+    width: 100vw;
+    height: 130px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 70px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.shopping{
+    position: relative;
+    right: 8rem;
+    text-align: right;
+}
+
+.shopping i{
+    font-size: 3rem;
+    color: #9acb44;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    overflow-y: hidden;
+}
+.shopping i:hover{
+    color:#578703;
+}
+
+.number{
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: -5px;
+    left: 3.2rem;
+    padding: 3px 7px;
+}
+
+.list{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:3vh 0rem;
+    padding:3vh 3vw;
+    place-items: center;
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.product{
+    position:relative;
+    height: 380px;
+    width: 70%;
+    background-color: white;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #9acb44;
+}
+
+.product .imgbox{
+    position: relative;
+    top: 1rem;
+    width: 100%;
+    height: 250px;
+    padding: 1.5rem 3rem;
+    background-color:white;
+    align-content: center;
+
+}
+
+.product .imgbox img{
+    position: relative;
+    width: inherit;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+.text{
+    position: absolute;
+    bottom: 10px;
+    padding: 1rem 2rem;
+    width: 100%;
+    color: black;
+}
+
+.text div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text div .name{
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.text div .price{
+    font-size: 1.5rem;
+}
+.ATC{
+    border: none;
+    outline: none;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+}
+.ATC:hover{
+    background-color: #a1e035;
+}
+
+.cartcontainer{
+    position: absolute;
+    top: 0;
+    right: -30vw;
+    background-color: white;
+    height: 100vh;
+    width: 30vw;
+    transition: 0.2s ease;
+    border-left: 2px solid #578703;
+}
+
+.active .cartcontainer{
+    right: 0vw;
+}
+
+h2{
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color:#578703;
+}
+
+.cartcontainer ul{
+    list-style: none;
+}
+
+.cartcontainer .bottomside{
+    display: flex;
+    height: 80px;
+    line-height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color:#578703;
+    padding-left:2rem;;
+    color: white;
+}
+
+.bottomside div:nth-child(1){
+    width: 50%;
+    height: inherit;
+    background-color:#578703;
+    padding-left:2rem;
+    font-size: 1.3rem;
+}
+
+.total span{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.closebtn{
+    position: relative;
+    height: inherit;
+    width: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.closebtn:hover{
+    background-color: #c8ea8d;
+}
+
+.cartcontainer ul li{
+    position: relative;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 3rem;
+    border-bottom: 2px solid #578703 ;
+}
+
+.cartcontainer ul li img{
+    height: inherit;
+}
+
+.cartcontainer ul li .name{
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.cartcontainer ul li .price{
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.changenumber span{
+    padding: 0.5rem;
+}
+
+.changenumber button{
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: 1px solid white;
+}
+.changenumber button:hover{
+    background-color:#578703;
+    color: white;
+}
+.minus{
+    padding: 2px 8px;
+}
+.plus{
+    padding: 2px 5px;
+}
+
+@media (max-width:1024px){
+  .list{grid-template-columns:repeat(2,1fr);padding:24px 24px;}
+  header{padding:14px 24px;}
+}
+@media (max-width:640px){
+  header{padding:12px 16px;}
+  .logo{height:42px;}
+  .list{grid-template-columns:1fr 1fr;gap:14px;padding:16px;}
+  .imgbox{height:160px;padding:16px;}
+  .name{font-size:1rem;}
+  .price{font-size:.95rem;}
+  .text{padding:12px 14px 14px;}
+  .cartcontainer{width:100%;right:-100%;}
+  .active .cartcontainer{right:0;}
+}
+@media (max-width:420px){
+  .list{grid-template-columns:1fr;gap:16px;padding:14px 12px;}
+  .imgbox{height:200px;}
+}
